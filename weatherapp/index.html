@@ -7,29 +7,38 @@
     <title>Weather</title>
     <link rel="stylesheet" href="styling.css" />
     <script src="https://kit.fontawesome.com/86a081e876.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="row row-data">
       <div class="col">
         <div class="col-left">
-          <div>12/08/2022</div>
-          <div>15:03</div>
-          <div>Precipitation: 20%</div>
-          <div>Wind: 03 km/hr</div>
+          <div id="numberdate">Date missing</div>
+          <div id="hourday">Day and hour missing</div>
+          <div id="humidity">Humidity: 20%</div>
+          <div id="windspeed">Wind: 03 km/hr</div>
         </div>
       </div>
       <div class="col">
         <div class="col-center">
           <div class="temp">
+            <span id="number-temperature">
             -22
-            <span class="unit">°F</span>
+          </span>
+            <span class="unit">
+              <span id="farenheit">°F </span> |
+              <span id="celsius">°C </span>
+            </span>
           </div>
-          <div class="city">Luleå</div>
-          <div class="state">Cloudy</div>
+          <div class="city" id="city">Luleå</div>
+          <div class="state" id="state">Clouds</div>
           <div>
-            <input type="text" class="input" placeholder="Enter your city here"/>
-            <input type="submit" class="button" value="Search" />
+          <form id="search-form">  
+            <input type="text" class="input" placeholder="Enter your city here" id="search-text-input"/>
+            <input type="submit" class="search-button" value="Search" />
+          </form>  
           </div>
+          <button id="geolocation-button" class="geolocation-button">Current Location</button>
         </div>
       </div>
       <div class="col"></div>
