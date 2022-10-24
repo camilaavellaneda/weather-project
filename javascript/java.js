@@ -80,7 +80,6 @@ function changeUnits(unit) {
 }
 function geolocationData(position) {
   console.log("fetching data...");
-
   let geolocationLatitude = position.coords.latitude;
   let geolocationLongitude = position.coords.longitude;
   let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${geolocationLatitude}&lon=${geolocationLongitude}&appid=${apiKey}&units=metric`;
@@ -96,7 +95,6 @@ function geolocationData(position) {
     console.log(response.data);
     let geolocationCity = document.querySelector("#city");
     geolocationCity.innerHTML = `${response.data.name}`;
-
     let geolocationHumidity = document.querySelector("#humidity");
     geolocationHumidity.innerHTML = `Humidity: ${Math.round(
       response.data.main.humidity
